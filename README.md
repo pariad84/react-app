@@ -2,6 +2,62 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## React 스터디 노트 (Windows 개발 환경)
+
+`src/lessons/` 폴더에 React 기초 개념별 실습 컴포넌트가 있고, `npm start`로 실행하면 상단 버튼으로 각 레슨을 전환하며 볼 수 있습니다.
+
+### 1. 준비물
+
+- [Node.js LTS](https://nodejs.org/) 설치 (npm이 함께 설치됩니다)
+  - 설치 후 PowerShell/명령 프롬프트에서 확인:
+    ```powershell
+    node -v
+    npm -v
+    ```
+- Git for Windows 설치 (https://git-scm.com/download/win)
+
+### 2. 저장소 클론 & 브랜치 체크아웃
+
+PowerShell에서:
+
+```powershell
+git clone https://github.com/pariad84/react-app.git
+cd react-app
+git checkout claude/react-study-f5i9lk
+```
+
+### 3. 의존성 설치 (npm install)
+
+```powershell
+npm install
+```
+
+- `node_modules` 폴더는 `.gitignore`에 포함되어 있어 저장소에는 올라가지 않습니다. 각자 로컬에서 `npm install`로 직접 생성해야 하며(OS/아키텍처별로 내용이 달라질 수 있어 원래 커밋하지 않는 것이 맞습니다), 이 저장소에는 `package.json`/`package-lock.json`만 커밋되어 있어 `npm install` 한 번으로 동일한 버전의 의존성이 설치됩니다.
+- Windows에서 `npm install` 중 스크립트 실행이 막히면, PowerShell 실행 정책 때문일 수 있습니다. 관리자 권한 PowerShell에서:
+  ```powershell
+  Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+  ```
+
+### 4. 개발 서버 실행
+
+```powershell
+npm start
+```
+
+브라우저에서 http://localhost:3000 을 열면 됩니다. 코드를 저장하면 자동으로 새로고침됩니다.
+
+### 5. 레슨 목록
+
+| 파일 | 주제 |
+| --- | --- |
+| `src/lessons/01_Props.jsx` | Props (부모 → 자식 데이터 전달) |
+| `src/lessons/02_Counter.jsx` | `useState` (상태 관리) |
+| `src/lessons/03_EffectClock.jsx` | `useEffect` (부수 효과 & 클린업) |
+| `src/lessons/04_TodoList.jsx` | 리스트 렌더링 & 폼 (제어 컴포넌트) |
+| `src/lessons/05_Conditional.jsx` | 조건부 렌더링 |
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:
